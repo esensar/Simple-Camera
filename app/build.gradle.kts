@@ -44,6 +44,11 @@ android {
     buildFeatures {
         viewBinding = true
         buildConfig = true
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
 
     buildTypes {
@@ -98,4 +103,7 @@ dependencies {
     implementation(libs.androidx.exifinterface)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.window)
+    implementation(libs.bundles.lifecycle)
+    implementation(libs.bundles.compose)
+    debugImplementation(libs.bundles.compose.preview)
 }
